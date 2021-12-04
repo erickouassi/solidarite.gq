@@ -1,9 +1,10 @@
 /* ======================================================================
   www.erickouassi.com
+  googleSheetApi: https://opensheet.vercel.app
 ====================================================================== */
 //
 async function getUsers() {
-    let url = 'https://opensheet.vercel.app/1bPSlQGENmSJNMpJbDpq-lrcvgY0Ah5_Cu9zTmmtmCZg/Data+2021';
+    let url = 'googleSheetApi';
     try {
         let res = await fetch(url);
         return await res.json();
