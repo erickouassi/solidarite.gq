@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>WebApp Solidarit.gq</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+ 
+<!-- import the webpage's d3js file -->
+<script src="https://d3js.org/d3.v3.min.js" ></script>
+<!-- import the webpage's stylesheet -->
+<link rel="stylesheet" href="/style.css">
+<!-- import the webpage's javascript file -->
+<script src="/script.js" defer></script>
+<!-- import the webpage's w3.js file to include html file-->
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+<body>
+<!-- navbar template-->
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+<div w3-include-html="templates/navbar.html"></div>
+</nav>
+<!-- header template-->
+<header class="w3-top w3-bar w3-theme">
+<div w3-include-html="templates/header.html"></div>
+</header>
+<!-- page content-->
+<div class="w3-container" style="margin-top:90px">
+<hr>
+<div w3-include-html="content/contact.html"></div>
+</div>
+<!-- footer-->
+<footer class="w3-container w3-bottom w3-theme w3-margin-top">
+<div w3-include-html="templates/footer.html"></div> 
+</footer>
+
+<script>
+  w3.includeHTML();
+</script>
+
+</body>
+</html>
