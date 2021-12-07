@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/style.css">
 <!-- import the webpage's javascript file -->
 <script src="/script.js" defer></script>
-<script src="login.js" defer></script>
+<script src="setup.js" defer></script>
 <!-- import the webpage's w3.js file to include html file-->
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 
@@ -34,7 +34,7 @@
 <p id="lblGreetings"></p>
 <form name ="myform" onsubmit="return validation();">
 			<input type="text" id="username" placeholder="Tapez votre identifiant ici">
-			<button type="button" onclick="renderUsers(); showErrors()">Afficher</button>
+			<button type="button" onclick="renderUsers(); showErrors(); showLoader()">Afficher</button>
 </form>
 <br>
 </div>

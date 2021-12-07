@@ -1,10 +1,9 @@
 /* ======================================================================
   www.erickouassi.com
-  googleSheetApi: https://opensheet.vercel.app
 ====================================================================== */
 //
 async function getUsers() {
-    let url = 'googleSheetApi';
+    let url = 'https://opensheet.vercel.app/1bPSlQGENmSJNMpJbDpq-lrcvgY0Ah5_Cu9zTmmtmCZg/Data+2021';
     try {
         let res = await fetch(url);
         return await res.json();
@@ -33,100 +32,46 @@ async function renderUsers() {
     let html = '';
    
         let htmlSegment = `<div class="user">
+        <div class="container">
         <img src="${result.profileURL}" >
-        <h2>${result.name}</h2>
-        <p> User ID: ${result.user_id}</p>
+        <span><h2>${result.name}</h2>
+        <p> Identifiant: ${result.user_id}</p></span>
+        </div>
+        <strong>Année 2021</strong>
         <p>Total: <strong>${result.total}</strong> Fcfa</p>
-<div>
-<table>
-  <caption>Récapitulatif des montants MENSUELS en FCFA)</caption>
-  <thead>
-    <tr>
-      <th scope="col">Janvier</th>
-      <th scope="col">Février</th>
-      <th scope="col">Mars</th>
-      <th scope="col">Avril</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="Janvier"> ${result.jan}</td>
-      <td data-label="Février"> ${result.feb}</td>
-      <td data-label="Mars"> ${result.mar}</td>
-      <td data-label="Avril"> ${result.apr}</td>
-    </tr>
-  </tbody>
-</table>
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Mai</th>
-      <th scope="col">Juin</th>
-      <th scope="col">Juillet</th>
-      <th scope="col">Août</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="Mai"> ${result.may}</td>
-      <td data-label="Juin"> ${result.jun}</td>
-      <td data-label="Juillet"> ${result.jul}</td>
-      <td data-label="Août"> ${result.aug}</td>
-    </tr>
-  </tbody>
-</table>
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Septembre</th>
-      <th scope="col">Octobre</th>
-      <th scope="col">Novembre</th>
-      <th scope="col">Décembre</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="Septembre"> ${result.sep}</td>
-      <td data-label="Octobre"> ${result.oct}</td>
-      <td data-label="Novembre"> ${result.nov}</td>
-      <td data-label="Décembre"> ${result.dec}</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<table>
-  <caption>Récapitulatif des montants EXCEPTIONNELLES en FCFA</caption>
-  <thead>
-    <tr>
-      <th scope="col">Exceptionnelle 1</th>
-      <th scope="col">Exceptionnelle 2</th>
-      <th scope="col">Exceptionnelle 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="Exceptionnelle 1"> ${result.ex1}</td>
-      <td data-label="Exceptionnelle 2"> ${result.ex2}</td>
-      <td data-label="Exceptionnelle 3"> ${result.ex3}</td>
-    </tr>
-  </tbody>
-</table>
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Exceptionnelle 4</th>
-      <th scope="col">Exceptionnelle 5</th>
-      <th scope="col">Exceptionnelle 6</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="Exceptionnelle 1"> ${result.ex4}</td>
-      <td data-label="Exceptionnelle 1"> ${result.ex5}</td>
-      <td data-label="Exceptionnelle 1"> ${result.ex6}</td>
-    </tr>
-  </tbody>
-</table>
+        
+        <caption>Récapitulatif des montants mensuels en FCFA)</caption>
+        <div class="cards_m">
+        <div class="card_m">
+            <p>Janvier: ${result.jan}</p>
+            <p>Février: ${result.feb}</p>
+            <p>Mars: ${result.mar}</p></div>
+        <div class="card_m">
+          <p>Avril: ${result.apr}</p>
+          <p>Mai: ${result.may}</p>
+          <p>Juin: ${result.jun}</p></div>
+        <div class="card_m">
+          <p>Juillet: ${result.jul}</p>
+          <p>Août: ${result.aug}</p>
+          <p>Septembre: ${result.sep}</p></div>
+        <div class="card_m">
+            <p>Octobre: ${result.oct}</p>
+            <p>Novembre: ${result.nov}</p>
+            <p>Décembre: ${result.dec}</p></div>
+        </div>
+        <br>
+        <caption>Récapitulatif des montants exceptionnels en FCFA</caption>
+        <div class="cards_e">
+        <div class="card_e">
+            <p>Exceptionnel 1: ${result.ex1}</p>
+            <p>Exceptionnel 2: ${result.ex2}</p></div>
+        <div class="card_e">
+          <p>Exceptionnel 3: ${result.ex3}</p>
+          <p>Exceptionnel 4: ${result.ex4}</p></div>
+        <div class="card_e">
+            <p>Exceptionnel 5: ${result.ex5}</p>
+            <p>Exceptionnel 6: ${result.ex6}</p></div>
+        </div>   
 
 </div>`;
 
